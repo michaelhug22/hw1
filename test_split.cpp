@@ -8,10 +8,43 @@ Create linked lists and split them with your split() function.
 You can compile this file like this:
 g++ split.cpp test_split.cpp -o test_split
 */
+#include "split.cpp"
+#include <iostream>
+using namespace std;
 
-#include "split.h"
 
 int main(int argc, char* argv[])
 {
-
+Node* in = new Node(1, new Node(3, new Node(5,new Node(7, new Node(9, nullptr))))); //Create list to test
+  
+  Node* odds = nullptr;
+  Node* evens = nullptr;
+  
+  split(in, odds, evens);
+  
+  // Print the linked lists
+  Node* curr = odds;
+  cout << "Odds:";
+  while (curr != nullptr) {
+    cout << curr->value << " ";
+    curr = curr->next;
+  }
+  cout << endl;
+  
+  cout << "Evens:";
+  curr = evens;
+  while (curr != nullptr) {
+    cout << curr->value << " ";
+    curr = curr->next;
+  }
+  cout << endl;
+  
+  Node* current = in; // delete in to prevent memory leaks
+while (current != nullptr) {
+    Node* next = current->next;
+    delete current;
+    current = next;
 }
+  return 0;
+}
+
