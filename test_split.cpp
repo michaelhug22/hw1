@@ -8,7 +8,7 @@ Create linked lists and split them with your split() function.
 You can compile this file like this:
 g++ split.cpp test_split.cpp -o test_split
 */
-#include "split.cpp"
+#include "split.h"
 #include <iostream>
 using namespace std;
 
@@ -43,6 +43,7 @@ Node* in = new Node(1, new Node(3, new Node(5,new Node(7, new Node(9, nullptr)))
 while (current != nullptr) {
     Node* next = current->next;
     delete current;
+    cout << "1";
     current = next;
 }
   return 0;

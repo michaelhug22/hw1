@@ -1,7 +1,6 @@
 #ifndef ULLISTSTR_H
 #define ULLISTSTR_H
 #include <string>
-
 #define ARRSIZE 10
 class ULListStr {
  public:
@@ -72,6 +71,9 @@ class ULListStr {
    */
   void push_front(const std::string& val);
 
+  //helper function to add element to the start of an array
+  void add_element_to_start(ULListStr::Item*, const std::string& value);
+  void add_first_element(const std::string& value);// adds to empty list
   /**
    * Removes a value from the front of the list
    *   - MUST RUN in O(1)
@@ -112,6 +114,8 @@ class ULListStr {
    * Deletes all items in the list
    */
   void clear();
+
+  void print();
 
  private:
   /** 
