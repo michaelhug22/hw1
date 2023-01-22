@@ -103,8 +103,9 @@ if (head_ == nullptr) {// check if list is empty
       tail_->val[tail_->last] = val;
       tail_->last++;
   }
+  size_++;
 }
-size_++;
+
 }
 
 void ULListStr::push_front(const std::string& val) {
@@ -124,8 +125,8 @@ void ULListStr::push_front(const std::string& val) {
             head_->first--;
             head_->val[head_->first] = val;
         }
+        size_++;
     }
-    size_++;
     return;
 }
 

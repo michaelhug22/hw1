@@ -1,4 +1,4 @@
-#include <string>
+ #include <string>
 #include <vector>
 #include <iostream>
 #include <sstream>
@@ -58,6 +58,6 @@ std::cout << std::endl << "testing front() and back()";
   //test front and back
   std::cout << " front: " << test_list->front() << " back: "
    << test_list->back() << std::endl;
-
+  delete test_list;
   return 0;
 }
